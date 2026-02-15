@@ -10,7 +10,7 @@ A collection of my open source contributions to various projects, focusing on ba
 |---------|----------|--------|------------|
 | Spring Framework | [#36323](https://github.com/spring-projects/spring-framework/pull/36323) | 🔄 Under Review | Documentation |
 | Reactor | [#4188](https://github.com/reactor/reactor-core/pull/4188) | 🔄 Under Review | Documentation |
-| MyBatis | [#1967](https://github.com/mybatis/mybatis-3/issues/1967) | 🚧 In Progress | Bug Fix |
+| MyBatis | [#1967](https://github.com/mybatis/mybatis-3/issues/1967) | 🔄 Under Review | Bug Fix |
 
 ---
 
@@ -62,20 +62,29 @@ A collection of my open source contributions to various projects, focusing on ba
 
 ## MyBatis
 
-### [Issue #1967](https://github.com/mybatis/mybatis-3/issues/1967) - ErrorContext ThreadLocal cleanup
-**Status**: 🚧 In Progress
-**Started**: 2026-02-12
+### [Issue #1967](https://github.com/mybatis/mybatis-3/issues/1967) - ErrorContext ThreadLocal memory leak
+**Status**: 🔄 Under Review
+**Date**: 2026-02-14
 **Type**: Bug Fix (Memory Leak)
 
-**What I'm Working On:**
-- Investigating ThreadLocal memory leak in MyBatis ErrorContext
-- Writing reproduction test to demonstrate the issue
-- Implementing cleanup logic to prevent memory leaks in thread pool environments
+**What I Did:**
+- Fixed ThreadLocal memory leak in ErrorContext during lazy loading
+- Added `ErrorContext.reset()` cleanup in 3 proxy implementations
+- Resolved 4-year-old issue affecting thread pool environments like Tomcat
+- Changes: 3 files, 9 insertions
 
-**What I'm Learning:**
-- ThreadLocal memory model and garbage collection behavior
-- MyBatis internal architecture and lazy loading mechanism
-- Memory profiling techniques with VisualVM
+**Impact:**
+- Prevents memory leaks in thread pool environments
+- Ensures ThreadLocal cleanup in all lazy loading code paths
+- Improves production stability for MyBatis users
+
+**What I Learned:**
+- ThreadLocal memory leak patterns in thread pool environments
+- ORM lazy loading implementation using Proxy pattern
+- Importance of resource cleanup in all code paths (normal/proxy/exception)
+- MyBatis internal architecture and error context management
+
+[📝 Detailed Retrospective](./mybatis/pr-1967.md)
 
 ---
 
