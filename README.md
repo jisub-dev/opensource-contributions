@@ -8,63 +8,74 @@ A collection of my open source contributions to various projects, focusing on ba
 
 | Project | PR/Issue | Status | Focus Area |
 |---------|----------|--------|------------|
+| MyBatis | [#3636](https://github.com/mybatis/mybatis-3/pull/3636) | ✅ Merged | Bug Fix |
+| Reactor | [#4207](https://github.com/reactor/reactor-core/pull/4207) | ✅ Merged (Co-author) | Documentation |
 | Spring Framework | [#36323](https://github.com/spring-projects/spring-framework/pull/36323) | 🔄 Under Review | Documentation |
-| Reactor | [#4188](https://github.com/reactor/reactor-core/pull/4188) | 🔄 Under Review | Documentation |
-| MyBatis | [#1967](https://github.com/mybatis/mybatis-3/issues/1967) | 🔄 Under Review | Bug Fix |
-
----
-
-## Spring Framework
-
-### [PR #36323](https://github.com/spring-projects/spring-framework/pull/36323) - Transaction docs: add Java Config tab for @Transactional
-**Status**: 🔄 Under Review
-**Date**: 2026-02-13
-**Type**: Documentation Enhancement
-
-**What I Did:**
-- Added Java Config examples to Transaction Management documentation alongside existing XML examples
-- Used AsciiDoc tabs to show both configuration approaches side-by-side
-- Demonstrated `@EnableTransactionManagement` and `PlatformTransactionManager` setup
-
-**Impact:**
-- Helps developers using modern Java Config approach
-- Reduces confusion for developers migrating from XML to annotation-based configuration
-
-**What I Learned:**
-- AsciiDoc tab syntax and Spring documentation structure
-- DCO (Developer Certificate of Origin) sign-off process
-- Spring's contribution workflow and commit message conventions
-
-[📝 Detailed Retrospective](./spring-framework/pr-36323.md)
 
 ---
 
 ## Reactor
 
-### [PR #4188](https://github.com/reactor/reactor-core/pull/4188) - docs: warn about fire-and-forget subscribe()
-**Status**: 🔄 Under Review (3 weeks)
-**Date**: 2026-01-23
+### [PR #4188 → #4207](https://github.com/reactor/reactor-core/pull/4207) - Add section about subscription patterns
+**Status**: ✅ Merged (Co-authored)
+**Date**: 2026-01-22 (Merged: 2026-02-24)
 **Type**: Documentation Enhancement
 
 **What I Did:**
-- Added warning about fire-and-forget `subscribe()` anti-pattern in reactive programming
-- Documented potential issues with unhandled errors and resource leaks
+- Submitted PR #4188 warning about fire-and-forget `subscribe()` anti-pattern
+- Maintainer improved and merged as PR #4207 with co-author credit
+- Documented proper subscription patterns and error handling at imperative boundaries
+- Included in Reactor 3.7.17 milestone
 
 **Impact:**
 - Helps developers avoid common reactive programming mistakes
 - Improves understanding of proper subscription handling
+- Benefits entire Reactor community with clearer documentation
 
 **What I Learned:**
 - Reactive programming best practices and anti-patterns
 - Common pitfalls in Project Reactor usage
+- How maintainers handle contributions (co-authorship pattern)
+- Patient follow-up timing (3 weeks before polite check-in)
+
+[📝 Detailed Retrospective](./reactor/pr-4188.md)
+
+---
+
+## Spring Framework
+
+### [PR #36323](https://github.com/spring-projects/spring-framework/pull/36323) - Transaction docs: add programmatic configuration example
+**Status**: 🔄 Under Review (Reviewer Feedback Addressed)
+**Date**: 2026-02-13 (Updated: 2026-02-22)
+**Type**: Documentation Enhancement
+
+**What I Did:**
+- Added programmatic configuration examples (Java & Kotlin) alongside XML examples
+- Extracted code to separate files for better maintainability
+- Used include-code directive following Spring's documentation patterns
+- Changed terminology from "Java Config" to "Programmatic Configuration"
+
+**Impact:**
+- Helps developers using modern programmatic configuration approach
+- Supports both Java and Kotlin developers equally
+- Improves documentation maintainability with separate code files
+
+**What I Learned:**
+- AsciiDoc tab syntax and include-code directive
+- Spring documentation file organization (java/kotlin/resources structure)
+- DCO (Developer Certificate of Origin) sign-off process
+- Responding to reviewer feedback effectively
+- Documentation build process with Gradle Antora
+
+[📝 Detailed Retrospective](./spring-framework/pr-36323.md)
 
 ---
 
 ## MyBatis
 
-### [Issue #1967](https://github.com/mybatis/mybatis-3/issues/1967) - ErrorContext ThreadLocal memory leak
-**Status**: 🔄 Under Review
-**Date**: 2026-02-14
+### [PR #3636](https://github.com/mybatis/mybatis-3/pull/3636) - Fix ErrorContext ThreadLocal memory leak in lazy loading
+**Status**: ✅ Merged
+**Date**: 2026-02-14 (Merged: 2026-02-15)
 **Type**: Bug Fix (Memory Leak)
 
 **What I Did:**
@@ -100,10 +111,10 @@ My contributions focus on:
 
 ## 🔗 Links
 
-- [Spring Framework Contribution](https://github.com/spring-projects/spring-framework/pull/36323)
-- [Reactor Contribution](https://github.com/reactor/reactor-core/pull/4188)
-- [MyBatis Issue](https://github.com/mybatis/mybatis-3/issues/1967)
+- [MyBatis PR #3636](https://github.com/mybatis/mybatis-3/pull/3636) - ✅ Merged
+- [Reactor PR #4207](https://github.com/reactor/reactor-core/pull/4207) - ✅ Merged (Co-author)
+- [Spring Framework PR #36323](https://github.com/spring-projects/spring-framework/pull/36323) - 🔄 Under Review
 
 ---
 
-**Last Updated**: 2026-02-14
+**Last Updated**: 2026-02-24
